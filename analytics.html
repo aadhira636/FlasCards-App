@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard - Flashcard Study App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="analytics.css">
+</head>
+<body>
+    <div class="analytics-container">
+        <!-- Header -->
+        <header class="analytics-header">
+            <h1>📊 Performance Analytics</h1>
+            <nav class="analytics-nav">
+                <a href="index.html" class="nav-link">← Back to Study</a>
+                <button id="clear-data-btn" class="clear-btn">Clear All Data</button>
+            </nav>
+        </header>
+
+        <!-- Current Session -->
+        <section id="current-session" class="analytics-section">
+            <h2>Current Session</h2>
+            <div id="current-session-content" class="session-content">
+                <p class="no-data">No current session data available.</p>
+            </div>
+        </section>
+
+        <!-- All Sessions -->
+        <section id="all-sessions" class="analytics-section">
+            <h2>All Study Sessions</h2>
+            <div id="sessions-list" class="sessions-list">
+                <p class="no-data">No previous sessions found.</p>
+            </div>
+        </section>
+
+        <!-- Summary Statistics -->
+        <section id="summary-stats" class="analytics-section">
+            <h2>Overall Statistics</h2>
+            <div id="summary-content" class="summary-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-value" id="total-sessions">0</div>
+                    <div class="stat-label">Total Sessions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-value" id="total-time">0h 0m</div>
+                    <div class="stat-label">Total Study Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-value" id="total-correct">0</div>
+                    <div class="stat-label">Total Correct</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-value" id="avg-accuracy">0%</div>
+                    <div class="stat-label">Average Accuracy</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="analytics.js"></script>
+</body>
+</html>
+

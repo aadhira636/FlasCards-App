@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Study App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="welcome-screen">
+        <div class="welcome-content">
+            <h1 class="welcome-title">Flashcard Study App</h1>
+            <p class="welcome-subtitle">Transform your PDFs into interactive study sessions</p>
+            <button id="start-btn" class="start-button">Get Started</button>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div id="main-app" class="main-app hidden">
+        <!-- Header -->
+        <header class="app-header">
+            <h1 id="deck-title" class="deck-title">Your Study Deck</h1>
+            <nav class="header-nav">
+                <button id="new-deck-btn" class="nav-button">New Deck</button>
+                <a href="analytics.html" id="analytics-link" class="nav-button">View Analytics</a>
+            </nav>
+        </header>
+
+        <!-- PDF Upload Section -->
+        <section id="upload-section" class="upload-section">
+            <div class="upload-container">
+                <div class="upload-icon">📄</div>
+                <h2>Upload PDF to Generate Flashcards</h2>
+                <p class="upload-description">Select a PDF file to automatically generate 8-12 flashcards</p>
+                <input type="file" id="pdf-input" accept=".pdf" class="file-input">
+                <label for="pdf-input" class="file-label">
+                    <span class="file-label-text">Choose PDF File</span>
+                </label>
+                <div id="upload-progress" class="upload-progress hidden">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <p class="progress-text">Processing PDF and generating flashcards...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flashcard Panel -->
+        <section id="flashcard-section" class="flashcard-section hidden">
+            <div class="flashcard-container">
+                <div id="flashcard" class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="card-header">
+                                <span class="card-number">Question <span id="current-card">1</span> of <span id="total-cards">0</span></span>
+                            </div>
+                            <div class="card-content">
+                                <h2 id="question-text" class="question-text">Loading question...</h2>
+                            </div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="card-header">
+                                <span class="card-number">Answer</span>
+                            </div>
+                            <div class="card-content">
+                                <h2 id="answer-text" class="answer-text">Loading answer...</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flashcard Controls -->
+                <div class="flashcard-controls">
+                    <button id="prev-btn" class="control-btn" disabled>← Previous</button>
+                    <button id="show-answer-btn" class="control-btn primary">Show Answer</button>
+                    <button id="next-btn" class="control-btn">Next →</button>
+                </div>
+
+                <!-- Response Buttons -->
+                <div id="response-buttons" class="response-buttons hidden">
+                    <button id="knew-it-btn" class="response-btn knew-it">✓ I Knew It</button>
+                    <button id="didnt-know-btn" class="response-btn didnt-know">✗ I Didn't Know</button>
+                </div>
+
+                <!-- Quiz Controls -->
+                <div class="quiz-controls">
+                    <button id="finish-quiz-btn" class="finish-btn">Finish Quiz</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
